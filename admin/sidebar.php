@@ -1,5 +1,13 @@
 <?php 
 include 'function.php';
+if(empty($_SESSION['user'])){
+
+header('location:login.php');
+}
+$user = $_SESSION['user'];
+
+$rs = connection()->query("SELECT * FROM `tbl_user` WHERE `id`= '$user' ");
+$row = mysqli_fetch_assoc($rs);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -31,36 +39,78 @@ include 'function.php';
                 <div class="col-2">
                     <div class="content-left">
                         <div class="wrap-top">
-                            <img src="assets/icon/admin-logo.png" alt="">
+                            <img src="assets/Adminthumbnail/coffeelogo.jpg" alt="" width="50px" height="50px">
                             <h5>Jong Deng News</h5>
                         </div>
                         <div class="wrap-center">
-                            <img src="https://via.placeholder.com/40" alt="">
-                            <h6>Welcome Admin Sok</h6>
+                            <img src="assets/Adminthumbnail/<?php echo $row['thumbnail']; ?>" alt="" width="50px" height="50px">
+                            <h6>Welcome Admin <?php echo $row['username'] ?> </h6>
                         </div>
                         <div class="wrap-bottom">
                             <ul>
                                 <li class="parent">
+                                    <a class="parent" href="logout.php">
+                                        <span>Logout</span>
+                                        <img src="assets/icon/arrow.png" alt="">
+                                    </a>
+                                </li>
+                                <li class="parent">
                                     <a class="parent" href="javascript:void(0)">
-                                        <span>MAIN MENU</span>
+                                        <span>LOGO MENU</span>
                                         <img src="assets/icon/arrow.png" alt="">
                                     </a>
                                     <ul class="child">
                                         <li>
-                                            <a href="view-post.php">View Post</a>
-                                            <a href="add-post.php">Add New</a>
+                                            <a href="view-logo.php">View logo</a>
+                                            <a href="add-logo.php">Add logo</a>
                                         </li>
                                     </ul>
                                 </li>
                                 <li class="parent">
                                     <a class="parent" href="javascript:void(0)">
-                                        <span>MAIN MENU</span>
+                                        <span>New</span>
                                         <img src="assets/icon/arrow.png" alt="">
                                     </a>
                                     <ul class="child">
                                         <li>
-                                            <a href="1">View Post</a>
-                                            <a href="1">Add New</a>
+                                    <a href="add-new.php">Add new</a>
+                                    <a href="view-new.php">view new</a>  
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="parent">
+                                    <a class="parent" href="javascript:void(0)">
+                                        <span>Follow</span>
+                                        <img src="assets/icon/arrow.png" alt="">
+                                    </a>
+                                    <ul class="child">
+                                        <li>
+                                    <a href="add-follow.php">Add Follow</a>
+                                    <a href="view-follow.php">view Follow</a>  
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="parent">
+                                    <a class="parent" href="javascript:void(0)">
+                                        <span>About_Us</span>
+                                        <img src="assets/icon/arrow.png" alt="">
+                                    </a>
+                                    <ul class="child">
+                                        <li>
+                                    <a href="about-us.php">Add About_Us</a>
+                                    <a href="view-about-us.php">view about_Us</a>  
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="parent">
+                                    <a class="parent" href="javascript:void(0)">
+                                        <span>Feedback</span>
+                                        <img src="assets/icon/arrow.png" alt="">
+                                    </a>
+                                    <ul class="child">
+                                        <li>
+                                    <!-- <a href="admin/--article/contact.php">Add Feedback</a> -->
+                                    <a href="view-feedback.php">view feedback</a>  
                                         </li>
                                     </ul>
                                 </li>

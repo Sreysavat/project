@@ -32,7 +32,8 @@
         <div class="container">
             <div class="logo">
                 <a href="index.php">
-                    <h3>JONGDENG NEWS</h3>
+                    <!-- <h3>JONGDENG NEWS</h3> -->
+                    <img src="../admin/assets/Adminthumbnail/<?php getlogo('header'); ?>" width="120px" height="70px" alt="">
                 </a>
             </div>
             <ul class="menu">
@@ -43,27 +44,27 @@
                             <a href="sport-news-national.php">National</a>
                         </li>
                         <li>
-                            <a href="">International</a>
+                            <a href="Sport-new-international.php">International</a>
                         </li>
                     </ul>
                 </li>
                 <li class="menu-sport"><a href="javascript:viod(0)">SOCIAL</a>
                     <ul class="sub-menu sport">
                         <li>
-                            <a href="">National</a>
+                            <a href="Socail-new-national.php">National</a>
                         </li>
                         <li>
-                            <a href="">International</a>
+                            <a href="Socail-new-international.php">International</a>
                         </li>
                     </ul>
                 </li>
                 <li class="menu-sport"><a href="javascript:viod(0)">ENTERTAINMENT</a>
                     <ul class="sub-menu sport">
                         <li>
-                            <a href="">National</a>
+                            <a href="Entertainment-new-national.php">National</a>
                         </li>
                         <li>
-                            <a href="">International</a>
+                            <a href="Entertainment-new-international.php">International</a>
                         </li>
                     </ul>
                 </li>
